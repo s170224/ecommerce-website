@@ -1,0 +1,63 @@
+/* Fixed Left Sidebar */
+.leftcontainer {
+    background-color: #0059b3;
+    height: 100vh;               /* Full viewport height */
+    border-right: 1px solid #ddd;
+    position: fixed;             /* Fix the position */
+    top: 0;                      /* Stick to the top of the viewport */
+    left: 0;                     /* Align to the left */
+    width: 25%;                  /* Take up 25% of the screen */
+    overflow-y: auto;            /* Scrollable sidebar */
+    padding: 20px;
+}
+
+/* Right Content Area */
+.rightcontainer {
+    background-color: pink;
+    min-height: 100vh;
+    margin-left: 25%;
+    padding: 20px;
+    width:75%;
+
+}
+
+.card1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.card-title {
+    width: 200px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #666;
+}
+
+.card-img {
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card1 li {
+    margin: 10px;
+    list-style-type: none;
+}
+
+.card1 a {
+    text-decoration: none;
+}

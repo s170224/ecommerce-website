@@ -1,0 +1,17 @@
+{% extends 'home/home.html' %}
+{% load static %}
+        {% block content %}
+        <ul class="card1">
+            {% for dress in womendress_data %}
+            <li > <a href="{% url 'women_dresses' dress.id %}">
+                  <div class="card-body">
+                        <img src="{{ dress.image.url }}" class="card-img" alt="{{ dress.name }}">
+                        <h5 class="card-title">{{ dress.dress_model_type }}</h5>
+                    </div>
+            </a>
+
+            </li>
+
+            {% endfor %}
+        </ul>
+        {% endblock %}

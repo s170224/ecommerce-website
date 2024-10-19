@@ -1,0 +1,38 @@
+{% extends 'home/home.html' %}
+{% load static %}
+
+{% block extra_css %}
+
+    <link rel="stylesheet" href="{% static 'womendressitem.css' %}">
+
+    {% endblock %}
+
+        {% block content %}
+        <div class=" subconwomen">
+            {% if women_items_data %}
+                {% for dress in women_items_data %}
+                <div class=".col-12 col-sm-6 col-md-4">
+                    <div class="cardcon shadow-sm">
+                        {% if dress.image %}
+                        <img src="{{ dress.image.url }}" class="image" alt="{{ dress.dress_name }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ dress.dress_name }}</h5>
+                            <p class="card-text text-muted"><strong>description:</strong> {{ dress.description }}</p>
+                            <p class="card-text"><strong>Price:</strong> {{ dress.price }}</p>
+                            <p class="card-text"><strong>Size:</strong> {{ dress.get_size_display }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-12">
+                    <div class="alert alert-warning" role="alert">
+                        No data available.
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        {% endblock %}
+
+
